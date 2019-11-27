@@ -195,7 +195,7 @@ namespace Castle.DynamicProxy
             await _proxy.AsynchronousVoidMethod().ConfigureAwait(false);
 
             // Assert
-            Assert.Equal($"{MethodName}:CompletedTiming:{_interceptor.Stopwatch.Elapsed:g}", _log[3]);
+            Assert.Equal($"{MethodName}:CompletedTiming:{_interceptor.Stopwatch?.Elapsed:g}", _log[3]);
         }
     }
 
@@ -265,7 +265,7 @@ namespace Castle.DynamicProxy
             await _proxy.AsynchronousResultMethod().ConfigureAwait(false);
 
             // Assert
-            Assert.Equal($"{MethodName}:CompletedTiming:{_interceptor.Stopwatch.Elapsed:g}", _log[3]);
+            Assert.Equal($"{MethodName}:CompletedTiming:{_interceptor.Stopwatch?.Elapsed:g}", _log[3]);
         }
     }
 
